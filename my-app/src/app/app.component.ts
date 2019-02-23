@@ -41,23 +41,15 @@ export class AppComponent {
   ];
 
 
-  rowData: object[] = [];
+  rowData:any = [];
 
   constructor(private http: HttpClient) {
 
   }
 
-   httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin':'*'
-      // 'Content-Type':  'application/json',
-      // 'Authorization': 'my-auth-token'
-    })
-  };
-
    ngOnInit() {
-    this.http.post('http://setaregan.datis-elevator.ir/api/User/GetAllUsers',null,this.httpOptions).subscribe((data) => {
-    
+    this.http.post('http://setaregan.datis-elevator.ir/api/User/GetAllUsers',null).subscribe((data) => {
+    this.rowData = data;
     console.log(data)});
   }
 }
