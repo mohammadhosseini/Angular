@@ -1,12 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<form >    <label>Search:</label>
+  <input id="SearchString" name="SearchString" type="text" value="" />    
+  <button type="submit" class="btn btn-primary">Filter</button>
+  <br /><br /> 
+</form> 
 <div class='table-container'>
-  <ag-grid-angular 
-    style="width: 500px; height: 500px;" 
+  <!-- <ag-grid-angular 
+    style="width: 80%; height: 80%;" 
     class="ag-theme-balham"
     [rowData]="rowData"  
     [columnDefs]="columnDefs"
     >
-</ag-grid-angular>
+</ag-grid-angular> -->
 </div>
 
 <router-outlet></router-outlet>

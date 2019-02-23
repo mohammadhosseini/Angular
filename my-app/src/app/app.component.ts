@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -8,23 +11,53 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
 
+  defaultColDef= {
+    width: 110,
+    resizable: true
+  }
+  
+
   columnDefs = [
-    {headerName: 'Make', field: 'make' },
-    {headerName: 'Model', field: 'model' },
-    {headerName: 'Price', field: 'price'}
+    {headerName: 'CreateDate', field: 'CreateDate'},
+    {headerName: 'Name', field: 'Name'}, 
+    {headerName: 'UserName', field: 'UserName'},
+    {headerName: 'PhoneNumber', field: 'PhoneNumber'},
+    {headerName: 'PostalCode', field: 'PostalCode'},
+    {headerName: 'Address', field: 'Address'},
+    {headerName: 'Birthday', field: 'Birthday'},
+    {headerName: 'City', field: 'City'},
+    {headerName: 'Work_Tel', field: 'Work_Tel'},  
+    {headerName: 'Register_Step', field: 'Register_Step' },
+    {headerName: 'LastMessageId', field: 'LastMessageId' },
+    {headerName: 'LastSendMessage', field: 'LastSendMessage'},  
+    {headerName: 'Registered', field: 'Registered' },
+    {headerName: 'Experience', field: 'Experience' }, 
+    {headerName: 'Score', field: 'Score'},
+    {headerName: 'Chance', field: 'Chance'},  
+    {headerName: 'Star', field: 'Star' },
+    {headerName: 'RefrenceID', field: 'RefrenceID'},  
+    {headerName: 'RefrenceDate', field: 'RefrenceDate' }
+  
   ];
 
-  rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-  ];
-  // rowData: any;
 
-  // constructor(private http: HttpClient) {
+  rowData: object[] = [];
 
-  // }
-  // ngOnInit() {
-  //   this.rowData = this.http.get('');
-  // }
+  constructor(private http: HttpClient) {
+
+  }
+
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin':'*'
+      // 'Content-Type':  'application/json',
+      // 'Authorization': 'my-auth-token'
+    })
+  };
+
+   ngOnInit() {
+    this.http.post('http://setaregan.datis-elevator.ir/api/User/GetAllUsers',null,this.httpOptions).subscribe((data) => {
+    
+    console.log(data)});
+  }
 }
