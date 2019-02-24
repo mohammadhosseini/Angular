@@ -1,0 +1,17 @@
+.form-group{
+    display: flex;
+}
+.control-label{
+    font-weight: 600;
+}
+
+.form-horizontal{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.form-container{
+    margin-left: 10%;
+}

@@ -1,17 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<form >    <label>Search:</label>
-  <input id="SearchString" name="SearchString" type="text" value="" />    
-  <button type="submit" class="btn btn-primary">Filter</button>
-  <br /><br /> 
-</form> 
-<div class='table-container'>
-  <ag-grid-angular 
-    style="width: 80%; height: 80%;" 
-    class="ag-theme-balham"
-    [rowData]="rowData"  
-    [columnDefs]="columnDefs"
-    >
-</ag-grid-angular>
-</div>
+ <!-- <div class="container body-container"> 
+  <h2>Index</h2>
+  <p>
+      <a href="/Users/Create">Create New</a>
+  </p>
+
+  <form >    <label>Search:</label>
+    <input id="SearchString" name="SearchString" type="text" value="" />    
+    <button type="submit" class="btn btn-primary">Filter</button>
+    <br /><br /> 
+  </form> 
+  <div class='table-container'>
+    <ag-grid-angular 
+      class="ag-theme-balham"
+      [rowData]="rowData"  
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [animateRows]="true"
+      [frameworkComponents]="frameworkComponents"
+      >
+  </ag-grid-angular>
+  </div>
+</div> -->
 
 <router-outlet></router-outlet>
+<app-edit></app-edit>
+<!-- (gridReady)="onGridReady($event)" -->

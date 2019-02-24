@@ -3,5 +3,48 @@
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
 
 .table-container{
-    margin-left: 10%;
+    /* margin-left: 10%; */
 }
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container {
+    /* max-width: 1170px; */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+
+    padding: 1px 0px;
+    box-sizing: border-box;
+    margin-left: 5px;
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    background-image: none;
+    max-width: 280px;
+
+}
+
+button {
+    margin-left: 5px;
+}
+
+

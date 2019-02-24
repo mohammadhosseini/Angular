@@ -1,57 +1,48 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import { CustomizedCellComponent } from './customized-cell/customized-cell.component';
-
+import { Component, OnInit } from '@angular/core';
+import { User } from '../User';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-edit',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class AppComponent {
-  title = 'my-app';
-  
+export class profileComponent implements OnInit {
+User:User;
+  constructor(private user: User) {
+      this.User = user;
+   }
+
+  ngOnInit() {
+  }
+
   defaultColDef= {
-    width: 110,
+    minwidth: 110,
     resizable: true,
     pagination: true,
     
   }
-
+  
   paginationPageSize = 10;
-  
-  frameworkComponents = {
-    customizedButton : CustomizedCellComponent
-  }
-  columnDefs = [
-    {headerName: 'Operation', field: 'Operation' , cellRenderer: 'customizedButton'},
-    {headerName: 'Selected', field: 'Selected'},
-    {headerName: 'ID', field: 'ID'},
-    {headerName: 'CreateDate', field: 'CreateDate'},
-    {headerName: 'Name', field: 'Name'}, 
-    {headerName: 'UserName', field: 'UserName'},
-    {headerName: 'PhoneNumber', field: 'PhoneNumber'},
-    {headerName: 'PostalCode', field: 'PostalCode'},
-    {headerName: 'Address', field: 'Address'},
-    {headerName: 'Birthday', field: 'Birthday'},
-    {headerName: 'City', field: 'City'},
-    {headerName: 'Work_Tel', field: 'Work_Tel'},  
-    {headerName: 'Register_Step', field: 'Register_Step' },
-    {headerName: 'Registered', field: 'Registered' },
-    {headerName: 'Cash', field: 'Cash' },
-    {headerName: 'Experience', field: 'Experience' }, 
-    {headerName: 'Score', field: 'Score'},
-    {headerName: 'Chance', field: 'Chance'},  
-    {headerName: 'Star', field: 'Star' },
-    {headerName: 'InstallCount', field: 'InstallCount' },
-    {headerName: 'BlockByAdmin', field: 'BlockByAdmin' },
-    {headerName: 'BlockByUser', field: 'BlockByUser' },
-    {headerName: 'RefrenceID', field: 'RefrenceID'},  
-    {headerName: 'RefrenceDate', field: 'RefrenceDate' }
-  
+
+  columnDefsInstall = [
+    {headerName: 'Name', field: 'Name'},
+    {headerName: 'Product Serial', field: 'ProductSerial'},
+    {headerName: 'Lottery Code', field: 'LotteryCode'},
+    {headerName: 'Date', field: 'Date'},
+    {headerName: 'Product Type', field: 'ProductType'},
+    {headerName: 'Quality', field: 'Quality'},
+    {headerName: 'Description', field: 'Description'}
   ];
-  
+
+  columnDefsCharge =[
+    {headerName: 'Type', field: 'Type'},
+    {headerName: 'Used', field: 'Used'},
+    {headerName: 'Code', field: 'Code'},
+  ]
+
+  // frameworkComponents = {
+  //   customizedButton : CustomizedCellComponent
+  // }
   rowData =[
     {
       "Selected": false,
@@ -187,15 +178,4 @@ export class AppComponent {
 }
   ]
 
-  // rowData:User[] = [];
-
-  // constructor(private http: HttpClient) {
-
-  // }
-
-  //  ngOnInit() {
-  //   this.http.post('http://setaregan.datis-elevator.ir/api/User/GetAllUsers',null).subscribe((data:User) => {
-  //   this.rowData = data;
-  //   console.log(data)});
-  // }
 }
